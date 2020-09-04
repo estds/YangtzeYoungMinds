@@ -1,78 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN" class="no-js">
 
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-
-    <title>{{ page.title }} | {{ site.name}}</title>
-    
-    <link rel="icon" href="https://cdn.jsdelivr.net/gh/estds/zhang-team/favicon.ico">
-    
-    <meta property="og:image" content="https://cdn.jsdelivr.net/gh/estds/zhang-team/assets/img/og-img.jpg">
-    <meta name="twitter:card" content="summary_large_image">
-
-    <link rel="icon" sizes="512x512" href="https://cdn.jsdelivr.net/gh/estds/zhang-team/assets/img/icon512.png">
-    <link rel="apple-touch-icon" sizes="512x512" href="https://cdn.jsdelivr.net/gh/estds/zhang-team/assets/img/icon512.png">
-    <link rel="icon" sizes="192x192" href="https://cdn.jsdelivr.net/gh/estds/zhang-team/assets/img/icon192.png">
-    <link rel="apple-touch-icon" sizes="192x192" href="https://cdn.jsdelivr.net/gh/estds/zhang-team/assets/img/icon192.png">
-        
-    <!-- Font Awesome -->
-    <link href="https://cdn.jsdelivr.net/gh/estds/cdn-res/fontawesome/5.12.0/css/all.min.css" rel="stylesheet">
-
-    <!-- Bootstrap core CSS -->
-    <link href="https://cdn.jsdelivr.net/gh/estds/cdn-res/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Material Design Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/gh/estds/cdn-res/mdb/4.15.0/css/mdb.min.css" rel="stylesheet">
-
-    <!-- Custom styles -->
-    <link href="/assets/css/styles.css" rel="stylesheet">
-
-    <style type="text/css">
-
-      @media (min-width: 800px) and (max-width: 850px) {
-        .navbar:not(.top-nav-collapse) {
-          background: #1C2331 !important;
-        }
-      }
-
-    </style>
-
-    <!-- JQuery -->
-    <script src="https://cdn.jsdelivr.net/gh/estds/cdn-res/jquery/3.4.1/jquery-3.4.1.min.js"></script>
-
-    <!-- Bootstrap JavaScript -->
-    <script src="https://cdn.jsdelivr.net/gh/estds/cdn-res/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-
-    <!-- MDB core JavaScript -->
-    <script src="https://cdn.jsdelivr.net/gh/estds/cdn-res/mdb/4.15.0/js/mdb.min.js"></script>
-    
-    <!-- QR Code JavaScript -->
-    <script src="https://cdn.jsdelivr.net/gh/estds/cdn-res/qrcode/qrcode.min.js"></script>
-    
-    <!-- typeahead.js JavaScript -->
-    <script src="https://cdn.jsdelivr.net/gh/estds/cdn-res/typeahead/0.11.1/typeahead.bundle.min.js"></script>
-    
+    <!-- meta -->
+        {% include meta.html %}
+    <!-- /meta -->
   </head>
 
-  <body id="top">
-    {% include navbar.html %}
-    
-    {{ content }}
-    
-    {% include footer.html %}
+  <body>
+    <div class="container-fluid px-0">
+      <!-- Push Wrapper -->
+      <div class="mp-pusher" id="mp-pusher">
 
-    <!-- SCRIPTS -->
+        <!-- mp-menu -->
+            {% include mp-menu.html %}
+        <!-- /mp-menu -->
 
-    <!-- A few tweaks -->
-    <script src="/assets/js/tweaks.js"></script>
+        <!-- content -->
+        <div class="content row min-vh-100">
+          <div class="col-12 col-lg-5 sidebar pb-5">
+            {% include sidebar.html %}
+          </div>
+          <div class="col-12 col-lg-7 main">
+            <h1 class="title mb-4">{{ page.title }}</h1>
+            {{ content }}
+          </div>
+        </div>
+        <!-- /content -->
 
-    <!-- Initializations -->
-    <script type="text/javascript">
-      // Animations initialization
-      // new WOW().init();
+        <!-- footer -->
+        <footer class="content row">
+          {% include footer.html %}
+        </footer>
+        <!-- /footer -->
+
+      </div><!-- /pusher -->
+
+    </div><!-- /container -->
+    <script src="_assets/js/classie.js"></script>
+    <script src="_assets/js/mlpushmenu.js"></script>
+    <script>
+      new mlPushMenu(document.getElementById('mp-menu'), document.getElementById('trigger'), {
+        type: 'cover'
+      });
+
     </script>
   </body>
 
