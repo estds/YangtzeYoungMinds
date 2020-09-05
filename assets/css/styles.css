@@ -66,6 +66,11 @@ a:focus {
 	display: block!important;
 }
 
+#prefetch-search .typeahead-dropdown-menu {
+	max-height: 30vh;
+	overflow-y: auto;
+}
+
 @media screen and (max-width: 520px) {
 	.main p {
 		font-size: 1.2rem;
