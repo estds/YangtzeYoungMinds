@@ -16,6 +16,7 @@ $(document).ready(function(){
 		
 });
 
+/*
 // using Web Share API if it is available
 const shareButton = document.querySelector('#share-toggle-sns');
 
@@ -33,8 +34,7 @@ shareButton.addEventListener('click', event => {
     })
     .catch(console.error);
 });
-
-
+*/
 
 
 // Scrolls smoothly to anchor
