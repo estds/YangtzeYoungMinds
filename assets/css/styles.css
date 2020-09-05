@@ -53,6 +53,13 @@ body {
 	padding-left: 1rem;
 }
 
+#searchModal.show {
+	background-color: rgba(0, 0, 0, 0.75);
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+	opacity: 1;
+}
+
 @media screen and (max-width: 520px) {
 	.main p {
 		font-size: 1.2rem;
