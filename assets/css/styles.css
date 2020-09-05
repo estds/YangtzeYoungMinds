@@ -62,6 +62,10 @@ a:focus {
 	opacity: 1;
 }
 
+#prefetch-search .twitter-typeahead {
+	display: block!important;
+}
+
 @media screen and (max-width: 520px) {
 	.main p {
 		font-size: 1.2rem;
