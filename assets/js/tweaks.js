@@ -112,7 +112,7 @@ $(function() {
       minLength: 2,
       highlight: true,
       classNames: {
-        menu: 'w-100',
+        menu: 'w-100 typeahead-dropdown-menu',
         hint: 'text-muted',
         dataset: 'typeahead-dropdown dropdown-menu show shadow mt-1 w-100',
         //suggestion: 'dropdown-item small text-truncate',
