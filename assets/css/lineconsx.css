@@ -19,11 +19,14 @@
   font-variant: normal;
   text-transform: none;
   line-height: 1;
-  margin: 0 .25rem;
 
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon:before {
+  margin: 0 .25rem;
 }
 
 .icon-arrow-left:before {
