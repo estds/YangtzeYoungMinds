@@ -4,7 +4,7 @@ $(document).ready(function(){
 	// open external links in a new tab/window
 	$('a').filter(function() {
 		return this.hostname && this.hostname !== location.hostname;
-	}).attr('target', '_blank').append('<sup><span class="icon icon-external"></span></sup>');
+	}).attr('target', '_blank').append('<sup><small class="icon icon-external"></small></sup>');
 
 	// activate Bootstrap tooltips
 	$('[data-toggle="tooltip"]').tooltip();
