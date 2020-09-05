@@ -17,20 +17,24 @@
         <!-- /mp-menu -->
 
         <!-- content -->
-        <div class="content row min-vh-100">
-          <div class="col-12 col-lg-5 sidebar pb-5">
-            {% include sidebar.html %}
-          </div>
-          <div class="col-12 col-lg-7 main">
-            <h1 class="title mb-4">{{ page.title }}</h1>
-            {{ content }}
+        <div class="content min-vh-100">
+          <div class="row">
+            <div class="col-12 col-lg-5 sidebar pb-5">
+              {% include sidebar.html %}
+            </div>
+            <div class="col-12 col-lg-7 main">
+              <h1 class="title mb-4">{{ page.title }}</h1>
+              {{ content }}
+            </div>
           </div>
         </div>
         <!-- /content -->
 
         <!-- footer -->
         <footer class="content row">
-          {% include footer.html %}
+          <div class="row">
+            {% include footer.html %}
+          </div>
         </footer>
         <!-- /footer -->
 
