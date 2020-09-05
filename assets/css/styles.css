@@ -24,6 +24,10 @@ body {
 	color: #ffc107;
 }
 
+.mp-menu {
+	width: 240px;
+}
+
 .mp-menu .mp-level {
 	background-color: #006064;
 }
