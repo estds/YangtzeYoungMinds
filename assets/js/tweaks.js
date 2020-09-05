@@ -116,7 +116,7 @@ $(function() {
         hint: 'text-muted',
         dataset: 'typeahead-dropdown dropdown-menu show shadow mt-1 w-100',
         //suggestion: 'dropdown-item small text-truncate',
-        highlight: 'amber lighten-4',
+        highlight: 'bg-warning',
       },
     }, {
       name: 'pages',
