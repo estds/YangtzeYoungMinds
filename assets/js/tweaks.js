@@ -90,3 +90,51 @@ $(document).scroll(function() {
   }
 });
 
+// initialise typeahead
+
+$(function() {
+
+  function initSearchBox() {
+
+    var pages = new Bloodhound({
+      datumTokenizer: Bloodhound.tokenizers.obj.whitespace(['title', 'abstract']),
+      // datumTokenizer: Bloodhound.tokenizers.whitespace,
+      queryTokenizer: Bloodhound.tokenizers.whitespace,
+
+      prefetch: {
+      	url: '/search.json',
+        ttl: 600000,
+      }
+    });
+
+
+    $('#search-box').typeahead({
+      minLength: 2,
+      highlight: true,
+      classNames: {
+        menu: 'w-100',
+        hint: 'text-muted',
+        dataset: 'typeahead-dropdown dropdown-menu show shadow mt-1 w-100',
+        //suggestion: 'dropdown-item small text-truncate',
+        highlight: 'amber lighten-4',
+      },
+    }, {
+      name: 'pages',
+      display: 'title',
+      source: pages,
+      templates: {
+        notFound: '<div class="dropdown-item py-2 small disabled empty-message">Nothing found</div>',
+        suggestion: function(data) {
+          return '<div class="dropdown-item py-2 small"><h6 class="text-truncate my-1">' + data.title + '</h6><p class="my-1 text-truncate">' + data.abstract + '</p></div>';
+        },
+      }
+    });
+
+    $('#search-box').bind('typeahead:select', function(ev, suggestion) {
+      window.location.href = suggestion.url;
+    });
+  }
+
+  initSearchBox();
+});
+
