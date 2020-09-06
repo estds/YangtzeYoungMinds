@@ -38,6 +38,9 @@ a:focus {
 .mp-menu a {
 	color: #fff;
 	text-decoration: none;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 
 .main p {
