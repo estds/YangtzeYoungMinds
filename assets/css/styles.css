@@ -5,8 +5,8 @@ body {
 }
 
 .icon:before {
-	margin-left: .25rem;
-	margin-right: .25rem;
+	margin-left: .25em;
+	margin-right: .25em;
 }
 
 a:focus {
