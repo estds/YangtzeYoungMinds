@@ -4,6 +4,11 @@ body {
 	font-weight: 150;
 }
 
+.icon:before {
+	margin-left: .25rem;
+	margin-right: .25rem;
+}
+
 a:focus {
 	outline: none;
 }
