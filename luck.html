@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="no-js">
+
+  <head>
+    <!-- meta -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucky Draw</title>
+    <meta name="author" content="YICODE" />
+    <link rel="stylesheet" id="Bootstrap_css-css" href="https://cdn.jsdelivr.net/gh/estds/cdn-res/bootstrap/4.5.2/css/bootstrap.min.css" type="text/css" media="all">
+    <script src="https://cdn.jsdelivr.net/gh/estds/cdn-res/jquery/3.5.1/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/estds/cdn-res/jquery.easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/estds/cdn-res/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/estds/cdn-res/slotmachine/slotmachine.min.js"></script>
+    <style>
+      html,
+      body {
+        font-size: 18px;
+      }
+
+      .slotwrapper {
+        font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        overflow: hidden;
+        height: 10rem;
+        background-color: #006064;
+        background-image: linear-gradient(to bottom, #006064 0%, #001D1E 100%);
+        max-width: 45rem;
+        margin: 0 auto;
+      }
+
+      .slotwrapper ul {
+        list-style: none;
+        height: 10rem;
+        font-size: 10rem;
+        line-height: 10rem;
+        text-align: center;
+      }
+
+    </style>    
+    <!-- /meta -->
+  </head>
+
+  <body>
+    <nav class="navbar position-fixed w-100">
+      <div class="container text-center">
+        <!-- Button trigger modal -->
+        <button type="button" class="ml-auto btn text-muted" data-toggle="modal" data-target="#settings" id="settings-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+          </svg></button>
+      </div>
+    </nav>
+    <div class="main vh-100 d-flex align-items-center">
+      <div class="container">
+        <div class="slotwrapper row border border-light rounded-lg text-white" id="example2">
+          <ul class="col-4">
+            <li>0</li>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+          </ul>
+          <ul class="col-4">
+            <li>0</li>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+          </ul>
+          <ul class="col-4">
+            <li>0</li>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+          </ul>
+        </div>
+        <div class="my-2">
+          <p class="text-center"><button type="button" class="btn btn-success btn-lg" id="start-button">Start!</button></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="settings" tabindex="-1" aria-labelledby="settings-button" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">设置</h5>
+          </div>
+          <div class="modal-body">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <label for="maxnum" class="input-group-text">人数</label>
+              </div>
+              <input id="maxnum" type="number" class="form-control" placeholder="999" aria-label="Username" aria-describedby="basic-addon1" value="999" min="1" max="999" step="1">
+            </div>
+            <p class="text-muted small">请输入参与人数，最大999，最少1。</p>
+            <div class="input-group d-none">
+              <input type="text" class="form-control " id="txt-example2-1" value="7" />
+              <input type="text" class="form-control " id="txt-example2-2" value="7" />
+              <input type="text" class="form-control " id="txt-example2-3" value="7" />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      $('#start-button').click(function() {
+        var maxnum = parseInt($('#maxnum').val());
+        var tnum = Math.floor(Math.random() * maxnum) + 1;
+        var num3 = tnum % 100 % 10 + 1;
+        var num2 = (tnum - num3 + 1) / 10 % 10 + 1;
+        var num1 = (tnum + 11 - 10 * num2 - num3) / 100 + 1;
+        $('#example2 ul').playSpin({
+          endNum: [num1, num2, num3],
+          stopSeq: 'leftToRight',
+        });
+        //console.log(tnum, num1, num2, num3);
+      });
+    </script>
+
+  </body>
+
+</html>
